@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet-async"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { toast } from 'sonner';
+import { Link } from "react-router-dom"
 
 export const Signin = () => {
 
@@ -24,7 +25,7 @@ export const Signin = () => {
         reset()
         toast.success("Enviamos um link de autenticação para seu email.", {
             action: {
-                label: "Reenviar", 
+                label: "Reenviar",
                 onClick: () => handleSignin(data)
             }
         })
@@ -34,6 +35,14 @@ export const Signin = () => {
         <>
             <Helmet title="login" />
             <div className="p-8">
+                <Button
+                    asChild
+                    variant="ghost"
+                    className="absolute right-8 top-8">
+                    <Link to="/sign-up/">
+                        Novo estabelecimento
+                    </Link>
+                </Button>
                 <div className="w-[350px] flex flex-col justify-center gap-6">
                     <div className="flex flex-col gap-2 text-center ">
                         <h1 className="text-2xl font-semibold tracking-tighter">Acessar Painel</h1>
