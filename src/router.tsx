@@ -4,12 +4,16 @@ import { LayoutApp } from "./pages/_layouts/app";
 import { LayoutAuth } from "./pages/_layouts/auth";
 import { Signin } from "./pages/auth/signin";
 import { Signup } from "./pages/auth/signup";
+import { Orders } from "./pages/app/orders/orders";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <LayoutApp/>,
-        children: [{ path: "/", element: <Dashboard /> }]
+        children: [
+            { path: "/", element: <Dashboard /> },
+            { path: "/orders", element: <Orders /> }
+        ]
     },
     {
         path: "/",
