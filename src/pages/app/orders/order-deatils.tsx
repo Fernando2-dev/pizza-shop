@@ -1,5 +1,5 @@
 import { DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 export const OrderDetails = () => {
     return (
@@ -58,20 +58,38 @@ export const OrderDetails = () => {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="text-right">
+                                <TableHead className="text-left">
                                     Produto
                                 </TableHead>
-                                <TableHead className="text-right">
+                                <TableHead className="text-left">
                                     QTD
                                 </TableHead>
-                                <TableHead className="text-right">
+                                <TableHead className="text-left">
                                     Preço
                                 </TableHead>
-                                <TableHead className="text-right">
+                                <TableHead className="text-left">
                                     SubTotal
                                 </TableHead>
                             </TableRow>
                         </TableHeader>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell className="text-left">Pizza Peperone Família</TableCell>
+                                <TableCell className="text-left">2</TableCell>
+                                <TableCell className="text-left">R$69,90</TableCell>
+                                <TableCell className="text-left">R$139,80</TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell className="text-left">Pizza 4Queijos Família</TableCell>
+                                <TableCell className="text-left">2</TableCell>
+                                <TableCell className="text-left">R$ 60,00</TableCell>
+                                <TableCell className="text-left">R$ 120,80</TableCell>
+                            </TableRow>
+                        </TableBody>
+                        <TableFooter>
+                            <TableCell colSpan={3}>Total</TableCell>
+                            <TableCell className="text-right font-medium">R$ 259,60</TableCell>
+                        </TableFooter>
                     </Table>
                 </div>
             </DialogHeader>
