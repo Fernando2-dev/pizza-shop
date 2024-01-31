@@ -5,11 +5,13 @@ import { LayoutAuth } from "./pages/_layouts/auth";
 import { Signin } from "./pages/auth/signin";
 import { Signup } from "./pages/auth/signup";
 import { Orders } from "./pages/app/orders/orders";
+import { NotFound } from "./pages/404";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <LayoutApp/>,
+        errorElement: <NotFound/>,
         children: [
             { path: "/", element: <Dashboard /> },
             { path: "/orders", element: <Orders /> }
@@ -18,6 +20,7 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <LayoutAuth/>,
+        errorElement: <NotFound/>,
         children: [
             { path: "/sign-in", element: <Signin /> },
             { path: "/sign-up", element: <Signup /> }
